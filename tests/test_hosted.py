@@ -194,3 +194,35 @@ class HostedAPI(unittest.TestCase):
         with self.assertRaises(hosted.InvalidArgumentError):
             hosted.Strategy(invalid=0.1)
         self.assertEqual(model("Acknowledgement", {"accepted": False}).accepted, False)
+
+
+class NativeIndicatorContext(unittest.TestCase):
+    def test_native_decimal_null_immutability_and_permissions(self):
+        context, requests = HostedAPI().context()
+        with self.assertRaises(hosted.PermissionDeniedError):
+            context.indicator("trend", "macd")
+        self.assertEqual(requests, [])
+        context._config["granted_capabilities"].append("indicators.read")
+
+        def transport(request):
+            requests.append(request)
+            return {
+                "jsonrpc": "2.0",
+                "id": request["id"],
+                "result": {"macd_line": "0.123456789123", "signal_line": None},
+            }
+
+        context._transport = transport
+        values = context.indicator("trend", "macd", parameters={"fast": "12"})
+        self.assertEqual(values["macd_line"], Decimal("0.123456789123"))
+        self.assertIsNone(values["signal_line"])
+        with self.assertRaises(TypeError):
+            values["macd_line"] = Decimal("2")
+        with self.assertRaises(hosted.InvalidArgumentError):
+            context.indicator("trend", "macd", parameters={"fast": 12})
+        self.assertEqual(len(requests), 1)
+        context._transport = lambda request: {
+            "jsonrpc": "2.0", "id": request["id"], "result": {"value": 0.1}
+        }
+        with self.assertRaises(hosted.ProtocolMismatchError):
+            context.indicator("trend", "macd", parameters={"fast": "12"})

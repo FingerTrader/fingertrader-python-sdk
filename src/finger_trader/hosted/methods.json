@@ -15,7 +15,8 @@
     "context.plot": "Plot",
     "context.marker": "Marker",
     "runtime.on_start": "StartEvent",
-    "runtime.on_stop": "StopEvent"
+    "runtime.on_stop": "StopEvent",
+    "context.indicator": "IndicatorQuery"
   },
   "notifications": {
     "runtime.callback_complete": "CallbackComplete"
@@ -34,7 +35,8 @@
     "context.exit_protected": "context_exit_protected_response",
     "context.log": "context_log_response",
     "context.plot": "context_plot_response",
-    "context.marker": "context_marker_response"
+    "context.marker": "context_marker_response",
+    "context.indicator": "context_indicator_response"
   },
   "stage": "P0-candidate"
 }

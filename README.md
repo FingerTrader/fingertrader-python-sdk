@@ -77,3 +77,12 @@ Report bugs and request supported API coverage through [GitHub Issues](https://g
 Never commit passwords, OAuth client values, access tokens, or customer data. Production TLS verification is enabled; requests do not follow redirects. HTTP trading permissions and risk controls remain server-side. Hosted code must be trusted local code; a worker process is not a security sandbox. See [Security](docs/security.md).
 
 Licensed under [Apache-2.0](LICENSE). API and market-data access remains subject to account authorization and applicable service terms.
+
+## Hosted Python projects (experimental)
+
+`finger_trader.hosted.Strategy` supports serial lifecycle callbacks in the
+Desktop host. Native indicator queries and backtest orders use the FQE engine
+shipped with the matching Desktop version. See
+[Python native execution](docs/quant/python-native-execution.md) for a MACD example,
+parameters, warmup and execution boundaries. This is distinct from the standalone
+HTTP SDK and does not grant real-account order authority.

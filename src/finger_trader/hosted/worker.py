@@ -159,6 +159,11 @@ class Wire:
 
 def load_strategy(config: dict[str, Any], context: BoundContext) -> Strategy:
     source = Path(config["source"]).resolve(strict=True)
+    # Isolated Python excludes cwd. Append the frozen project after trusted
+    # SDK/stdlib paths so helpers can be imported without shadowing them.
+    project_root = str(source.parent)
+    if project_root not in sys.path:
+        sys.path.append(project_root)
     spec = importlib.util.spec_from_file_location("_finger_user_strategy", source)
     if spec is None or spec.loader is None:
         raise ProtocolMismatchError("Invalid Python strategy file")

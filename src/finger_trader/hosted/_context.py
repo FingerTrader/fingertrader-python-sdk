@@ -239,6 +239,31 @@ class BoundContext(Context):
         )
         return tuple(model("Bar", item) for item in result)
 
+    def indicator(
+        self, id: str, kind: str, *, parameters: Mapping[str, str] | None = None
+    ) -> Mapping[str, Decimal | None]:
+        """Declare on_start, then read this instance after each native closed bar.
+
+        FQE owns initialization, warmup and arithmetic. None means unavailable;
+        values are Decimal and never locally recomputed or rounded by the SDK.
+        An instance cannot change parameters after the first bar.
+        """
+        settings = {} if parameters is None else dict(parameters)
+        if not all(type(k) is str and type(v) is str for k, v in settings.items()):
+            raise InvalidArgumentError("Indicator parameters must be string pairs")
+        result = self._call("indicator", {"id": id, "kind": kind, "parameters": settings})
+        values = {}
+        for key, value in result.items():
+            if type(key) is not str or (value is not None and type(value) is not str):
+                raise ProtocolMismatchError("Invalid native indicator output")
+            if value is not None:
+                try:
+                    SCHEMA.check("Decimal", value)
+                except ContractError as error:
+                    raise ProtocolMismatchError("Invalid native indicator decimal") from error
+            values[key] = None if value is None else Decimal(value)
+        return MappingProxyType(values)
+
     def account(self) -> Account:
         return model("Account", self._call("account", {}))
 

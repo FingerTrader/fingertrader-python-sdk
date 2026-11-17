@@ -170,7 +170,7 @@ class OpeningCompetition(unittest.TestCase):
 
 class PythonPublicAPI(unittest.TestCase):
     def test_declarations_wire_types_defaults_and_errors_agree(self):
-        self.assertEqual(check_api(ROOT)["context_methods"], 10)
+        self.assertEqual(check_api(ROOT)["context_methods"], 11)
 
     def test_wrong_type_default_mapping_or_error_cannot_pass(self):
         for mutation in ("type", "default", "model-default", "mutable-model", "mapping", "error"):

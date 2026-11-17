@@ -32,7 +32,9 @@ def check_api(root):
             return "Literal[" + ", ".join(repr(v) for v in schema["enum"]) + "]"
         if "const" in schema:
             return "Literal[" + repr(schema["const"]) + "]"
-        return {"string": "str", "integer": "int", "boolean": "bool"}[schema["type"]]
+        return {
+            "string": "str", "integer": "int", "boolean": "bool", "object": "Mapping[str, str]"
+        }[schema["type"]]
 
     def annotation(text):
         return aliases.get(text, text)
@@ -127,6 +129,9 @@ def check_api(root):
         if declared_return.startswith("tuple["):
             if result != {"type": "array", "items": {"$ref": "#/$defs/Bar"}}:
                 raise ValueError("history return mapping mismatch")
+        elif name == "indicator":
+            if declared_return != "Mapping[str, Decimal | None]" or result != {"type": "object"}:
+                raise ValueError("native indicator output map differs from wire")
         elif declared_return not in api["models"] or result_schema(spec["ipc"]) != (
             result_schema("context.submit_order")
             if declared_return == "OrderSubmission"

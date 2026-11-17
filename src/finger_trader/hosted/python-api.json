@@ -109,6 +109,16 @@
         "price": "price",
         "timestamp": "timestamp ?? context.now"
       }
+    },
+    "indicator": {
+      "ipc": "context.indicator",
+      "capability": "indicators.read",
+      "permission": "read",
+      "payload": {
+        "id": "id",
+        "kind": "kind",
+        "parameters": "parameters"
+      }
     }
   },
   "lifecycle": {
@@ -166,7 +176,8 @@
     "Strategy.context": "self -> Context",
     "Strategy.on_start": "self, context: Context -> None",
     "Strategy.on_bar": "self, bar: Bar -> None",
-    "Strategy.on_stop": "self -> None"
+    "Strategy.on_stop": "self -> None",
+    "Context.indicator": "self, id: str, kind: str, *, parameters: Mapping[str, str] | None=None -> Mapping[str, Decimal | None]"
   },
   "model_defaults": {
     "Bar": {},

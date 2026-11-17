@@ -5966,6 +5966,212 @@
       "definition": "Strategy",
       "valid": false,
       "raw": "{\"schema_version\": 1, \"strategy_id\": \"s-1\", \"name\": \"example\", \"language\": \"python\", \"api_major\": \"1\", \"source_kind\": \"handwritten\", \"entrypoint\": {\"file\": \"strategy.py\", \"class_name\": \"Example\"}, \"parameters\": {\"quantity\": \"0.5\", \"boundary\": 1e400}, \"requested_capabilities\": [\"history.read\", \"account.read\", \"orders.write\"]}"
+    },
+    {
+      "name": "coverage_IndicatorQuery",
+      "definition": "IndicatorQuery",
+      "valid": true,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "method": "context.indicator",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "id": "trend",
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_missing_id",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "method": "context.indicator",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_unknown_field",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "method": "context.indicator",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "id": "trend",
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            },
+            "future_bar": "1"
+          }
+        }
+      }
+    },
+    {
+      "name": "coverage_context_indicator_response",
+      "definition": "context_indicator_response",
+      "valid": true,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "result": {
+          "macd_line": "0.123456789123",
+          "signal_line": null
+        }
+      }
+    },
+    {
+      "name": "invalid_context_indicator_response_missing_result",
+      "definition": "context_indicator_response",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1"
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_missing_jsonrpc",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "id": "id-1",
+        "method": "context.indicator",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "id": "trend",
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_missing_id_envelope",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "method": "context.indicator",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "id": "trend",
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_missing_method",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "params": {
+          "run_id": "id-1",
+          "callback_id": "id-1",
+          "request_seq": 1,
+          "payload": {
+            "id": "trend",
+            "kind": "macd",
+            "parameters": {
+              "fast": "12",
+              "slow": "26",
+              "signal": "9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid_IndicatorQuery_missing_params",
+      "definition": "IndicatorQuery",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1",
+        "method": "context.indicator"
+      }
+    },
+    {
+      "name": "invalid_context_indicator_response_missing_jsonrpc",
+      "definition": "context_indicator_response",
+      "valid": false,
+      "value": {
+        "id": "id-1",
+        "result": {
+          "macd_line": "0.123456789123",
+          "signal_line": null
+        }
+      }
+    },
+    {
+      "name": "invalid_context_indicator_response_missing_id",
+      "definition": "context_indicator_response",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "result": {
+          "macd_line": "0.123456789123",
+          "signal_line": null
+        }
+      }
+    },
+    {
+      "name": "invalid_context_indicator_response_missing_result_envelope",
+      "definition": "context_indicator_response",
+      "valid": false,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "id-1"
+      }
     }
   ]
 }

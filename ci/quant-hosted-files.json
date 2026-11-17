@@ -2,7 +2,7 @@
   "stage": "P1-hosted-worker-development",
   "files": {
     "docs/quant/p1-hosted-status.md": {
-      "sha256": "feea810b25d1ae4c9af3ccd099db250e510c71f89f8b782aa3ac554825cb7f3c"
+      "sha256": "53f0bf0c26349d830abe2b00bc8e547221c7133250daede410dbfaccdfae7988"
     },
     "pyproject.toml": {
       "sha256": "9215006c5538dd2aebd86d064b4c25c9d1b0cff0e1ca6f1fb743fd04d739c56e"
@@ -17,28 +17,28 @@
       "sha256": "16885ef3d958da3e1e19169c38205854e1bc7a313573e2a8f894378e48c959de"
     },
     "src/finger_trader/hosted/__init__.py": {
-      "sha256": "689b9bd1c470887848ea0566e28c39fb1158bf20b9f919d8e93b4fcf78e629ef"
+      "sha256": "0a4bf15332074964ad2837ae81da292939cbabe9042ece34e971908ec6df2eb8"
     },
     "src/finger_trader/hosted/_context.py": {
-      "sha256": "ac3391d09ee242423d05a3770be386adb15f1cbc9225bdc275651048a9c06781"
+      "sha256": "5d7707d4334966f980c732dfb386ae939721e27fef1bffbd52b9305b27a8fb3b"
     },
     "src/finger_trader/hosted/_schema.py": {
       "sha256": "0fd23102a0ee226b8fe5e2b27de5b08a8ea29b9e9d65535bd11d7df22778a31b"
     },
     "src/finger_trader/hosted/methods.json": {
-      "sha256": "60225e6c710d917dea8630ac7c3856a4f864f7798dd6396bcd723f17304f3e6d"
+      "sha256": "f30e687902dfd537940c66a1e9be5309425a40814f622ba76be1082b33ad7e32"
     },
     "src/finger_trader/hosted/policy.json": {
       "sha256": "4d5042ab8227a798daa6507eba38e6105907a80c5a752a91277eee120669adcb"
     },
     "src/finger_trader/hosted/python-api.json": {
-      "sha256": "207916f40f44732932de4442a456f1df2d359f296ee706d4e7804302f556cb4b"
+      "sha256": "6b99a1d245889faa977cb6c7abaf5f0871cfbe64362f015e89d00e9549bc3ce3"
     },
     "src/finger_trader/hosted/schema.json": {
-      "sha256": "bc9548fd67eeb8c8c691266155fe829abc91fa1ca6b8a75e92d52b1a39eeab06"
+      "sha256": "6e520d265e36a7fbf036fbadbce2611f5b6b6a6b9bd9fa8f21a13e6d241723b5"
     },
     "src/finger_trader/hosted/worker.py": {
-      "sha256": "e25b95770a967ecd876067cf8d065928a9b716995ce736a75915ec3230866ff6"
+      "sha256": "a528f2478179b7ee6793bae69057b00ec14253ea368aed591113c49707333f8e"
     },
     "src/finger_trader/indicators/__init__.py": {
       "sha256": "4a461f4344887dbe7e9acf2aec382613126c7e5e3ce98c923ee44ae5fa690645"
@@ -95,10 +95,10 @@
       "sha256": "f6af88cb38a2c263c0eb7d76ea0497f13470c43da0bb418d8915484d34e01429"
     },
     "tests/test_hosted.py": {
-      "sha256": "85c2fb6bdff0f06630d50065998f577b8168c02bdedf09314c709e91fcf9e26a"
+      "sha256": "c89bbb36703b6284d398e80460f7ea03ac4b5bf2c9e0f46672922824b6a054d3"
     },
     ".github/workflows/ci.yml": {
-      "sha256": "4688df5825a772818cc92e53a3b64d93f50fe03819fc7b006f495f63506218df"
+      "sha256": "1db28ff72bdf7c7722598ee1db1cb01b48e8121dd51b19fb761cbb644a79da8b"
     },
     "tests/test_hosted_disconnect.py": {
       "sha256": "4729bc7e7d79579bf07708d21535fdc616e3a4ca6da246615cb0afda5592d55d"
