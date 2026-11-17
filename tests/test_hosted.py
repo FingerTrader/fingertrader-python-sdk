@@ -222,7 +222,9 @@ class NativeIndicatorContext(unittest.TestCase):
             context.indicator("trend", "macd", parameters={"fast": 12})
         self.assertEqual(len(requests), 1)
         context._transport = lambda request: {
-            "jsonrpc": "2.0", "id": request["id"], "result": {"value": 0.1}
+            "jsonrpc": "2.0",
+            "id": request["id"],
+            "result": {"value": 0.1},
         }
         with self.assertRaises(hosted.ProtocolMismatchError):
             context.indicator("trend", "macd", parameters={"fast": "12"})

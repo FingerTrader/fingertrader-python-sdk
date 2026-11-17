@@ -34,7 +34,7 @@
     "tools/quant/core_dependencies.py": "f406dc392ebd56dbef1fecf73d6cc9dc80eaf9030e024db97dd536433bfb7976",
     "tools/quant/opening_reference.py": "0ee041b214de017eda12d910896d8e0f048cb0d4fac7c47609cd833c64846834",
     "tools/quant/peer_lock.py": "e4a48cc77e5ca127b7a045d50d78f914e24be7ab2fbe5f59204f78a3402ba404",
-    "tools/quant/python_api_check.py": "52b9eeec7c65997a2d0f19aa56f63f83bf064b13da5f5c716e96ba6df88bed46",
+    "tools/quant/python_api_check.py": "62dec72b7865d29a4740b84f39193b8a7099ca4e3fcef270d5c3a021be4bbf7c",
     "tools/quant/quality.py": "37a907aae5272631bcb2846ded2f21c1db6413d600eee2aa6fd6a86f962ccc31",
     "tools/quant/remote_acceptance.py": "f90b55ee3c4f9487cf53276bd6a972bcee3b01926b73324757c99bd18c1258ff",
     "tools/quant/report_summary.py": "04bb78cadbca7bfae6b10e4d17ea527fc079a05fd1fc33cb1eae09da0f8bfcea",

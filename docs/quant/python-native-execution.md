@@ -15,11 +15,16 @@ change after the first bar. Different IDs have independent native state.
 from decimal import Decimal
 from finger_trader.hosted import Strategy
 
+
 class UserStrategy(Strategy):
     def on_start(self, ctx):
         self.macd_parameters = {
-            "fast": "12", "slow": "26", "signal": "9", "source": "close",
-            "oscillator_ma_type": "ema", "signal_ma_type": "ema",
+            "fast": "12",
+            "slow": "26",
+            "signal": "9",
+            "source": "close",
+            "oscillator_ma_type": "ema",
+            "signal_ma_type": "ema",
             "histogram_multiplier": "1.0",
         }
         ctx.indicator("trend", "macd", parameters=self.macd_parameters)
@@ -39,11 +44,11 @@ class UserStrategy(Strategy):
             return
         held = ctx.position().quantity
         if previous <= 0 < difference and held == 0:
-            ctx.submit_order(client_order_id=f"entry.{self.sequence}", side="buy",
-                quantity=Decimal("1"))
+            ctx.submit_order(
+                client_order_id=f"entry.{self.sequence}", side="buy", quantity=Decimal("1")
+            )
         elif previous >= 0 > difference and held > 0:
-            ctx.submit_order(client_order_id=f"exit.{self.sequence}", side="sell",
-                quantity=held)
+            ctx.submit_order(client_order_id=f"exit.{self.sequence}", side="sell", quantity=held)
 ```
 
 `indicators.read` is a separately granted capability. Only the active callback's

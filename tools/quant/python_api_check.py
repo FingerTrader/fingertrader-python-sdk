@@ -33,7 +33,10 @@ def check_api(root):
         if "const" in schema:
             return "Literal[" + repr(schema["const"]) + "]"
         return {
-            "string": "str", "integer": "int", "boolean": "bool", "object": "Mapping[str, str]"
+            "string": "str",
+            "integer": "int",
+            "boolean": "bool",
+            "object": "Mapping[str, str]",
         }[schema["type"]]
 
     def annotation(text):
