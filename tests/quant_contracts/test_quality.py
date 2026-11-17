@@ -29,6 +29,18 @@ def check_boundaries(root):
 
 
 class NegativeQualityTests(unittest.TestCase):
+    def test_native_fqe_is_adapter_and_cannot_be_imported_by_portable_core(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            core = root / "lib/app/quant"
+            (core / "fqe").mkdir(parents=True)
+            (core / "fqe/native.dart").write_text("import 'dart:io'; class Native {}")
+            (core / "model.dart").write_text("class Model {}")
+            self.assertEqual(check_boundaries(root)["core_files"], 1)
+            (core / "model.dart").write_text("import 'fqe/native.dart'; class Model {}")
+            with self.assertRaisesRegex(ValueError, "prohibited dependency"):
+                check_boundaries(root)
+
     def test_peer_comparison_covers_new_shared_files(self):
         with tempfile.TemporaryDirectory() as tmp:
             roots = [Path(tmp) / role for role in ("desktop", "sdk")]

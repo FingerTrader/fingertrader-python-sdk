@@ -2,7 +2,7 @@
   "bundle_version": "1.0.0-candidate.5",
   "stage": "P0-unreleased",
   "files": {
-    "core-dependencies.json": "680a388521468f0302fafea8c1b0f836996321dbb54b3ffa6e33cf65877c6e98",
+    "core-dependencies.json": "a437ee28dc0773c6337e4b265bee64811235372e9c347611d44c1372eb680755",
     "goldens.json": "d6c179dc7c12779e247010ecef408ebc5832ee9c58b675b533890a900adee158",
     "information-boundary.json": "eb5a281c0d4c2cfa0820bfa27fed355209640ca461d48d1a1559253874b24107",
     "messages.json": "2c530ef6f0da413bff6e1e11c134349d78964f8696a7cf71d03383d8140fdefa",

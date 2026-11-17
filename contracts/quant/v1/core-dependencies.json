@@ -5,7 +5,8 @@
     "lib/app/quant/presentation",
     "lib/app/quant/adapters",
     "lib/app/modules",
-    "lib/app/widgets"
+    "lib/app/widgets",
+    "lib/app/quant/fqe"
   ],
   "allowed_dart_libraries": [
     "dart:async",
@@ -17,5 +18,5 @@
     "dart:typed_data"
   ],
   "external_packages": [],
-  "review": "P0 permits only portable Dart SDK libraries. io, ffi, ui, mirroring and unknown package imports require platform adapters. No third-party package has been approved; an exception requires a reviewed gate extension and pinned package evidence, never just a package-name whitelist edit."
+  "review": "P0 permits only portable Dart SDK libraries. io, ffi, ui, mirroring and unknown package imports require platform adapters. No third-party package has been approved; an exception requires a reviewed gate extension and pinned package evidence, never just a package-name whitelist edit. The fqe directory is the Desktop native-process, file-storage and presentation adapter, not the portable financial core; portable core cannot import it."
 }
