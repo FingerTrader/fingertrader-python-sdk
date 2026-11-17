@@ -6172,6 +6172,32 @@
         "jsonrpc": "2.0",
         "id": "id-1"
       }
+    },
+    {
+      "name": "hosted_live_mode",
+      "definition": "Handshake",
+      "valid": true,
+      "value": {
+        "jsonrpc": "2.0",
+        "id": "Example",
+        "method": "runtime.initialize",
+        "params": {
+          "run_id": "Example",
+          "protocol_min": "1.0",
+          "protocol_max": "1.0",
+          "api_major": "1",
+          "mode": "live",
+          "binding_id": "Example",
+          "granted_capabilities": [
+            "history.read"
+          ],
+          "limits": {
+            "message_bytes": 1048576,
+            "queue_bytes": 16777216,
+            "queue_items": 1000
+          }
+        }
+      }
     }
   ]
 }

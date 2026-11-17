@@ -140,8 +140,8 @@ class BoundContext(Context):
         return self._config["record"]["run_id"]
 
     @property
-    def mode(self) -> Literal["backtest"]:
-        return "backtest"
+    def mode(self) -> Literal["backtest", "live"]:
+        return self._config.get("mode", "backtest")
 
     @property
     def parameters(self) -> Mapping[str, ParameterValue]:

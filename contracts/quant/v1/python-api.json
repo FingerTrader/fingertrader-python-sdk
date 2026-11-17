@@ -155,7 +155,7 @@
   ],
   "signatures": {
     "Context.run_id": "self -> str",
-    "Context.mode": "self -> Literal['backtest']",
+    "Context.mode": "self -> Literal['backtest', 'live']",
     "Context.now": "self -> datetime",
     "Context.phase": "self -> Phase",
     "Context.is_warmup": "self -> bool",

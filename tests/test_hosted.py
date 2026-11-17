@@ -142,6 +142,12 @@ class HostedAPI(unittest.TestCase):
         context._owner = threading.get_ident()
         return context, requests
 
+    def test_live_mode_is_explicit_and_old_configs_remain_backtest(self):
+        context, _ = self.context()
+        self.assertEqual(context.mode, "backtest")
+        context._config["mode"] = "live"
+        self.assertEqual(context.mode, "live")
+
     def test_decimal_thread_permissions_and_no_local_error_sequence_gap(self):
         context, requests = self.context()
         self.assertEqual(context.account().cash, Decimal("0.1000000000000000001"))

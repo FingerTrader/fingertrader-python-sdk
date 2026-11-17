@@ -2,7 +2,7 @@
   "stage": "P1-hosted-worker-development",
   "files": {
     "docs/quant/p1-hosted-status.md": {
-      "sha256": "53f0bf0c26349d830abe2b00bc8e547221c7133250daede410dbfaccdfae7988"
+      "sha256": "b1d44275093373710d218186ea0270ff820e0e9b1f8018b396076498f53b5ffb"
     },
     "pyproject.toml": {
       "sha256": "9215006c5538dd2aebd86d064b4c25c9d1b0cff0e1ca6f1fb743fd04d739c56e"
@@ -17,10 +17,10 @@
       "sha256": "16885ef3d958da3e1e19169c38205854e1bc7a313573e2a8f894378e48c959de"
     },
     "src/finger_trader/hosted/__init__.py": {
-      "sha256": "0a4bf15332074964ad2837ae81da292939cbabe9042ece34e971908ec6df2eb8"
+      "sha256": "477edbb825e41984b9976a14ae5b2f301497b80b99828ac75bcb5fa5ae279f07"
     },
     "src/finger_trader/hosted/_context.py": {
-      "sha256": "5d7707d4334966f980c732dfb386ae939721e27fef1bffbd52b9305b27a8fb3b"
+      "sha256": "40a530ea4d2944e1faed34577d8441d7a2fb836cdcb7cb0067569f5996dc72e9"
     },
     "src/finger_trader/hosted/_schema.py": {
       "sha256": "0fd23102a0ee226b8fe5e2b27de5b08a8ea29b9e9d65535bd11d7df22778a31b"
@@ -32,13 +32,13 @@
       "sha256": "4d5042ab8227a798daa6507eba38e6105907a80c5a752a91277eee120669adcb"
     },
     "src/finger_trader/hosted/python-api.json": {
-      "sha256": "6b99a1d245889faa977cb6c7abaf5f0871cfbe64362f015e89d00e9549bc3ce3"
+      "sha256": "58e80a4e3d1caa5620b55d8c36210f77e608bbdc4a3968cc27a2782a23742fe2"
     },
     "src/finger_trader/hosted/schema.json": {
-      "sha256": "6e520d265e36a7fbf036fbadbce2611f5b6b6a6b9bd9fa8f21a13e6d241723b5"
+      "sha256": "4e206e72791ddef0142686ef34f8e86f13fc4897f1a9efd54dbc62b9144f392b"
     },
     "src/finger_trader/hosted/worker.py": {
-      "sha256": "a528f2478179b7ee6793bae69057b00ec14253ea368aed591113c49707333f8e"
+      "sha256": "5a818df81f67d5c9fcc646ec0177dd79eb31df0f5360c719946d14e4ee76e769"
     },
     "src/finger_trader/indicators/__init__.py": {
       "sha256": "4a461f4344887dbe7e9acf2aec382613126c7e5e3ce98c923ee44ae5fa690645"
@@ -95,7 +95,7 @@
       "sha256": "f6af88cb38a2c263c0eb7d76ea0497f13470c43da0bb418d8915484d34e01429"
     },
     "tests/test_hosted.py": {
-      "sha256": "dbec511feccf094f49ef3f91cc0cf96211f43e9ba2105f76e79a1e5c80469e91"
+      "sha256": "7ebd1fa5ab8b2980080ed03c87c42794c33cf7ca56c07a7d4f02e8d18c7ddab9"
     },
     ".github/workflows/ci.yml": {
       "sha256": "1db28ff72bdf7c7722598ee1db1cb01b48e8121dd51b19fb761cbb644a79da8b"

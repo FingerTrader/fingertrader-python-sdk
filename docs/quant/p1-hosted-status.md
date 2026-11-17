@@ -3,6 +3,12 @@
 [English](p1-hosted-status.md) | [日本語](../ja/quant/p1-hosted-status.md) | [繁體中文](../zh-TW/quant/p1-hosted-status.md) | [한국어](../ko/quant/p1-hosted-status.md) | [العربية](../ar/quant/p1-hosted-status.md)
 
 
+## 2026-11-18 Python execution adapter update
+
+`Context.mode` explicitly identifies `backtest` or `live`. The worker checks that the initialization handshake matches the frozen configuration; older configurations retain the `backtest` default. The Desktop adapter owns broker authorization and confirmed order/account data. Native FQE owns indicator values in both modes. The SDK never simulates a live fill or falls back to HTTP credentials. Live support is capability-gated by the Host; the current Desktop adapter supports confirmed whole-contract, long-only market orders and broker-hosted percentage protection. Unsupported order types fail explicitly.
+
+This source update is not a signed SDK Release or a PyPI publication. The existing immutable application runtime and trust policy remain in effect.
+
 ## 当前状态（2026-11-11）
 
 P1 托管 SDK／worker 候选 `ec94ca4a170974808af416e6b00487917497eeda` 已集成到 main。当前源码包含 `finger_trader.hosted` 公开 API、Decimal／UTC 模型、不可变参数、Context 绑定、双向 JSON-RPC、同步生命周期、Host 截止时间及断连进程组清理。开发入口见[托管策略指南](../hosted-strategies.md)，精确接口见[API 契约](python-managed-api-v1.md)。

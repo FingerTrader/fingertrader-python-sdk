@@ -205,6 +205,7 @@ def main() -> int:
         params["run_id"] != context.run_id
         or params["binding_id"] != config["record"]["binding_id"]
         or params["granted_capabilities"] != config["granted_capabilities"]
+        or params["mode"] != config.get("mode", "backtest")
     ):
         raise ProtocolMismatchError("Handshake does not match frozen configuration")
     strategy = load_strategy(config, context)

@@ -511,7 +511,10 @@
               "const": "1"
             },
             "mode": {
-              "const": "backtest"
+              "enum": [
+                "backtest",
+                "live"
+              ]
             },
             "binding_id": {
               "type": "string",
