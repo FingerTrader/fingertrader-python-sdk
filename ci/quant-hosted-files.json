@@ -95,7 +95,7 @@
       "sha256": "f6af88cb38a2c263c0eb7d76ea0497f13470c43da0bb418d8915484d34e01429"
     },
     "tests/test_hosted.py": {
-      "sha256": "c89bbb36703b6284d398e80460f7ea03ac4b5bf2c9e0f46672922824b6a054d3"
+      "sha256": "dbec511feccf094f49ef3f91cc0cf96211f43e9ba2105f76e79a1e5c80469e91"
     },
     ".github/workflows/ci.yml": {
       "sha256": "1db28ff72bdf7c7722598ee1db1cb01b48e8121dd51b19fb761cbb644a79da8b"
